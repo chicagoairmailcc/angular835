@@ -1,0 +1,33 @@
+pages:
+  image: node
+  before_script:
+    - pwd
+  script:
+    - free -h
+    - df -h
+    - npm --version
+    - date
+    - yarn install
+    - date
+    - yarn run ng --version
+    - yarn run ng build --aot=true --prod --build-optimizer --verbose --progress=true --delete-output-path --extract-licenses --subresource-integrity --stats-json --output-path=public
+    - date
+    - free -h
+    - du -sh public/
+    - ls -a
+    - pwd
+    - ls -a
+    - pwd
+  artifacts:
+    paths:
+      - public
+
+test:mypages:
+  image: trion/ng-cli-karma
+  script:
+    - pwd 
+    - ls -a
+    - yarn install
+    - yarn run ng test --progress false --watch=false
+    - yarn run ng e2e
+
