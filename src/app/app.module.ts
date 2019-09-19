@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ItemComponent } from './item/item.component';
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

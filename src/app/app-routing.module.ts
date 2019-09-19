@@ -5,8 +5,8 @@ import { ItemComponent } from './item/item.component';
 
 
 const routes: Routes = [
-  { path: 'item/:id', component: ItemComponent },
-  { path: '', component: ItemComponent, pathMatch: 'full' },
+  { path: 'item/:id', component: AppComponent },
+  { path: '', component: AppComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
