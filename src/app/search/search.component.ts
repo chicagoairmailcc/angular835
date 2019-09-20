@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
 
   getItem(input: string) {
     console.log({input});
-    this.itemService.searchTerm = input;
   }
 
 }
