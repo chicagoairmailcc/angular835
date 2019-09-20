@@ -41,6 +41,7 @@ export class ItemComponent implements OnInit, AfterContentChecked {
   getCurrentUrl() {
     this.activatedRoute.url.subscribe(data => {
       console.log({urlSegmentsFromItem: data});
+      console.log({itemActivatedRoute: this.activatedRoute });
     });
   }
 
