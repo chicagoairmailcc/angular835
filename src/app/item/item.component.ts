@@ -35,7 +35,7 @@ export class ItemComponent implements OnInit {
   getIdFromUrl(): void {
     this.activatedRoute.params.subscribe((parameters: Params) => {
       const urlParameters = parameters;
-      this.id = urlParameters.id;
+      this.id = urlParameters.item;
     });
   }
 
