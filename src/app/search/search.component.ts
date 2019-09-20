@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import { ItemService } from '../item.service';
-import { UrlSegment, ActivatedRoute } from '@angular/router';
+import { UrlSegment, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +13,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private itemService: ItemService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,6 +27,7 @@ export class SearchComponent implements OnInit {
     console.log({input});
     this.searchTerm = input;
     this.itemService.setSearchTerm(input);
+    this.router.navigateByUrl('/item/' + this.searchTerm);
   }
 
 }
