@@ -21,7 +21,8 @@ export class ItemService {
 
   itemUrl = '/assets/item/';
 
-  getItem(id: number = 1) {
+  getItem(id: string = '1') {
+    console.log({id});
     return this.http.get<Item>(this.itemUrl + id + '.json')
       .pipe(
         retry(3),

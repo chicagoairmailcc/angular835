@@ -19,13 +19,12 @@ export class ItemComponent implements OnInit {
   id: string;
 
   ngOnInit() {
-    const id = this.getIdFromUrl();
-    console.log(id);
     this.getIdFromUrl();
+    this.getItemData(this.id);
   }
 
-  getItemData(id: number) {
-    this.itemService.getItem().subscribe(
+  getItemData(id: string) {
+    this.itemService.getItem(id).subscribe(
       result => {
         this.item = result;
         console.log(result.name);
@@ -33,13 +32,11 @@ export class ItemComponent implements OnInit {
     );
   }
 
-  getIdFromUrl(): number {
+  getIdFromUrl(): void {
     this.activatedRoute.params.subscribe((parameters: Params) => {
       const urlParameters = parameters;
-      const id = urlParameters.id;
-      return id;
+      this.id = urlParameters.id;
     });
-    return 1;
   }
 
 }
