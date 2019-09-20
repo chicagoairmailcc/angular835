@@ -23,6 +23,7 @@ export class ItemComponent implements OnInit, AfterContentChecked {
       console.log({itemData: data});
       this.id = data;
       this.getItemData(data);
+      this.getCurrentUrl();
     });
   }
 
@@ -35,6 +36,12 @@ export class ItemComponent implements OnInit, AfterContentChecked {
         console.log(result.name);
       }
     );
+  }
+
+  getCurrentUrl() {
+    this.activatedRoute.url.subscribe(data => {
+      console.log({urlSegmentsFromItem: data});
+    });
   }
 
 }
