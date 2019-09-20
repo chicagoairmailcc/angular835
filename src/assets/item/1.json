@@ -1,4 +1,5 @@
 {
     "id": "1",
-    "name": "item one"
+    "name": "item one",
+    "description": "Item One is a beautiful item brought to you by the number one."
 }

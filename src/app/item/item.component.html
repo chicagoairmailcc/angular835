@@ -2,6 +2,9 @@
     <p *ngIf="item !== undefined">
         {{ item.id }} - {{ item.name }}
     </p>
+    <p *ngIf="item !== undefined">
+        {{ item.description }}
+    </p>
     <p *ngIf="item === undefined">
         No results found. Try again? Hint: search for 1, 2, or 3. 
     </p>
