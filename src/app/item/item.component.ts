@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.sass']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnInit, AfterContentChecked {
 
   constructor(
     private itemService: ItemService,
@@ -20,6 +20,12 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.getIdFromUrl();
+  }
+
+  ngAfterContentChecked() {
+    this.itemService.searchTermChange.subscribe((data: string) => {
+      console.log({itemData: data});
+    });
   }
 
   getItemData(id: string) {

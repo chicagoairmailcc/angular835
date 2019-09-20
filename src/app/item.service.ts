@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -15,11 +15,17 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ItemService {
-  constructor(
-    private http: HttpClient
-    ) { }
+  constructor(private http: HttpClient) { }
 
   itemUrl = '/assets/item/';
+  searchTerm: string;
+
+  @Output() searchTermChange: EventEmitter<string> = new EventEmitter();
+
+  setSearchTerm(searchTerm: string): void {
+    this.searchTerm = searchTerm;
+    this.searchTermChange.emit(this.searchTerm);
+  }
 
   getItem(id: string) {
     console.log({id});
