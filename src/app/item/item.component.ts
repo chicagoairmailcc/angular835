@@ -19,14 +19,14 @@ export class ItemComponent implements OnInit, AfterContentChecked {
   id: string;
 
   ngOnInit() {
-    this.getIdFromUrl();
-  }
-
-  ngAfterContentChecked() {
     this.itemService.searchTermChange.subscribe((data: string) => {
       console.log({itemData: data});
+      this.id = data;
+      this.getItemData(data);
     });
   }
+
+  ngAfterContentChecked() { }
 
   getItemData(id: string) {
     this.itemService.getItem(id).subscribe(
@@ -35,19 +35,6 @@ export class ItemComponent implements OnInit, AfterContentChecked {
         console.log(result.name);
       }
     );
-  }
-
-  getIdFromUrl(): void {
-    this.activatedRoute.params.subscribe((parameters: Params) => {
-      const urlParameters = parameters;
-      this.id = urlParameters.item;
-      console.log({urlParameters});
-      this.getItemData(urlParameters.item);
-    });
-
-    this.activatedRoute.paramMap.subscribe((data => {
-      console.log({itemComponentUrl: data});
-    }));
   }
 
 }
