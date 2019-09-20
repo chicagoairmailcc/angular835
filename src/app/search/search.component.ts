@@ -17,6 +17,9 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe((data => {
+      console.log({searchComponentUrl: data});
+    }));
   }
 
   getItem(input: string) {

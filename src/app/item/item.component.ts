@@ -44,6 +44,10 @@ export class ItemComponent implements OnInit, AfterContentChecked {
       console.log({urlParameters});
       this.getItemData(urlParameters.item);
     });
+
+    this.activatedRoute.paramMap.subscribe((data => {
+      console.log({itemComponentUrl: data});
+    }));
   }
 
 }
