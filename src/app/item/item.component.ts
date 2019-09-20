@@ -20,7 +20,6 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.getIdFromUrl();
-    this.getItemData(this.id);
   }
 
   getItemData(id: string) {
@@ -36,6 +35,8 @@ export class ItemComponent implements OnInit {
     this.activatedRoute.params.subscribe((parameters: Params) => {
       const urlParameters = parameters;
       this.id = urlParameters.item;
+      console.log({urlParameters});
+      this.getItemData(urlParameters.item);
     });
   }
 
