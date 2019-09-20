@@ -1,5 +1,5 @@
 <mat-card class="search-card">
     <mat-form-field>
-        <input matInput placeholder="Search">
+        <input matInput placeholder="Search" (keyup)="getItem($event.target.value)">
     </mat-form-field>
 </mat-card>
