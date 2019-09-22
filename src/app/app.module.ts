@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ItemComponent
+    ItemComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
