@@ -1,1 +1,5 @@
-<p>quiz works!</p>
+<div *ngIf="quiz">
+    <p *ngFor="let quiz of quizzes">
+        {{ quiz }}
+    </p>
+</div>
