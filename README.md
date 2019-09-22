@@ -1,3 +1,9 @@
+[![pipeline status](https://gitlab.com/angular835/angular835.gitlab.io/badges/master/pipeline.svg)](https://gitlab.com/angular835/angular835.gitlab.io/commits/master)
+
+[![coverage report](https://gitlab.com/angular835/angular835.gitlab.io/badges/master/coverage.svg)](https://gitlab.com/angular835/angular835.gitlab.io/commits/master)
+
+
+
 # Angular835
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
