@@ -17,7 +17,9 @@ export class QuizComponent implements OnInit {
   getQuiz() {
     this.quizService.get().subscribe(
       result => {
-        console.log(result);
+        for (const x of result) {
+          console.log(x.id);
+        }
       }
     );
   }

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Item } from './item';
+import { Quiz } from './quiz';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,7 +21,7 @@ export class QuizService {
   quizUrl = '/assets/quiz/quiz.json';
 
   get() {
-    return this.http.get<any>(this.quizUrl)
+    return this.http.get<Quiz[]>(this.quizUrl)
       .pipe(
         retry(3),
         catchError(this.handleError)
