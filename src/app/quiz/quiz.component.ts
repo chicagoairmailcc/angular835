@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz.service';
+import { Quiz } from '../quiz';
 
 @Component({
   selector: 'app-quiz',
@@ -7,6 +8,8 @@ import { QuizService } from '../quiz.service';
   styleUrls: ['./quiz.component.sass']
 })
 export class QuizComponent implements OnInit {
+
+  quizzes: Quiz[];
 
   constructor(private quizService: QuizService) { }
 
@@ -17,7 +20,8 @@ export class QuizComponent implements OnInit {
   getQuiz() {
     this.quizService.get().subscribe(
       result => {
-        for (const x of result) {
+        this.quizzes = result;
+        for (const x of this.quizzes) {
           console.log(x.id);
         }
       }
