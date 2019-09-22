@@ -1,5 +1,12 @@
 <div *ngIf="quizzes">
-    <p *ngFor="let quiz of quizzes">
-        {{ quiz }}
-    </p>
+    <div *ngFor="let quiz of quizzes">
+        <p>
+            {{ quiz.id }}. {{ quiz.question }}
+        </p>
+        <ul *ngFor="let option of quiz.options">
+            <li>
+                {{ option }}
+            </li>
+        </ul>
+    </div>
 </div>
