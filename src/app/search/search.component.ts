@@ -19,12 +19,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((data => {
-      console.log({searchComponentUrl: data});
+      console.log({ searchComponentUrl: data });
+      if (data.has('id')) {
+        console.log({ searchComponentID: data.get('id') });
+        this.searchTerm = data.get('id');
+        this.getItem(this.searchTerm);
+      }
     }));
   }
 
   getItem(input: string) {
-    console.log({input});
+    console.log({ input });
     this.searchTerm = input;
     this.itemService.setSearchTerm(input);
     this.router.navigateByUrl('/item/' + this.searchTerm);
