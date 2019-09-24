@@ -13,13 +13,15 @@ import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizComponent } from './quiz/quiz.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ItemComponent,
-    QuizComponent
+    QuizComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
