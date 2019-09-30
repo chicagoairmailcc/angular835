@@ -10,6 +10,9 @@ import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
 })
 export class ItemComponent implements OnInit, AfterContentChecked {
 
+  itemBaseUrl = '/item';
+  itemOne = '1';
+
   constructor(
     private itemService: ItemService,
     private activatedRoute: ActivatedRoute
