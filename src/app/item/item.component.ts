@@ -12,6 +12,9 @@ export class ItemComponent implements OnInit, AfterContentChecked {
 
   itemBaseUrl = '/item';
   itemOne = '1';
+  itemTwo = '2';
+  itemThree = '3';
+  itemFour = '4';
 
   constructor(
     private itemService: ItemService,
@@ -23,7 +26,7 @@ export class ItemComponent implements OnInit, AfterContentChecked {
 
   ngOnInit() {
     this.itemService.searchTermChange.subscribe((data: string) => {
-      console.log({itemData: data});
+      console.log({ itemData: data });
       this.id = data;
       this.getItemData(data);
       this.getCurrentUrl();
@@ -43,8 +46,8 @@ export class ItemComponent implements OnInit, AfterContentChecked {
 
   getCurrentUrl() {
     this.activatedRoute.url.subscribe(data => {
-      console.log({urlSegmentsFromItem: data});
-      console.log({itemActivatedRoute: this.activatedRoute });
+      console.log({ urlSegmentsFromItem: data });
+      console.log({ itemActivatedRoute: this.activatedRoute });
     });
   }
 

@@ -6,6 +6,18 @@
         {{ item.description }}
     </p>
     <p *ngIf="item === undefined">
-        No results found. Try again? Hint: search for <a [routerLink]="[itemBaseUrl, itemOne]">{{ itemOne }}</a>, 2, or 3. 
+        No results found. Try again? Hint: search for
+        <a [routerLink]="[itemBaseUrl, itemOne]">
+            {{ itemOne }}
+        </a>,
+        <a [routerLink]="[itemBaseUrl, itemTwo]">
+            {{ itemTwo }}
+        </a>,
+        <a [routerLink]="[itemBaseUrl, itemThree]">
+            {{ itemThree }}
+        </a>,
+        <a [routerLink]="[itemBaseUrl, itemFour]">
+            {{ itemFour }}
+        </a>.
     </p>
 </mat-card>
