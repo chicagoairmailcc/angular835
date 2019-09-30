@@ -31,3 +31,11 @@ test:mypages:
     - yarn run ng test --progress false --watch=false
     - yarn run ng e2e
 
+test:mypagesnatively:
+  image: node
+  script:
+    - pwd 
+    - ls -a
+    - yarn install
+    - yarn run ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage
+    - yarn run ng e2e --protractor-config=e2e/protractor-ci.conf.js
