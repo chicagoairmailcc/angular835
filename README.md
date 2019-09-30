@@ -2,6 +2,7 @@
 
 [![coverage report](https://gitlab.com/angular835/angular835.gitlab.io/badges/master/coverage.svg)](https://gitlab.com/angular835/angular835.gitlab.io/commits/master)
 
+new update: uses default angular test now with headless chrome :D
 
 
 # Angular835
