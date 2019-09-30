@@ -33,4 +33,8 @@ describe('ItemService', () => {
           description: 'This actually works'
         });
       }));
+
+  afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
+    httpMock.verify();
+  }));
 });
