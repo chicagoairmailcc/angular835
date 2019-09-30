@@ -42,7 +42,7 @@ test:mypagesnatively:
     - export CHROME_BIN=/usr/bin/chromium-browser
     - node --version
     - npm --version
-    - yarn --version
-    - yarn install
-    - yarn run ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage
-    - yarn run ng e2e --protractor-config=e2e/protractor-ci.conf.js
+    - nodejs-yarn --version
+    - nodejs-yarn install
+    - nodejs-yarn run ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage
+    - nodejs-yarn run ng e2e --protractor-config=e2e/protractor-ci.conf.js
