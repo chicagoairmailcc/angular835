@@ -32,10 +32,11 @@ test:mypages:
     - yarn run ng e2e
 
 test:mypagesnatively:
-  image: node
+  image: fedora
   script:
     - pwd 
     - ls -a
+    - dnf install chromium nodejs nodejs-yarn -yqq
     - yarn install
     - yarn run ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage
     - yarn run ng e2e --protractor-config=e2e/protractor-ci.conf.js
