@@ -1,5 +1,5 @@
 <mat-card class="search-card">
     <mat-form-field>
-        <input matInput placeholder="Search" [(ngModel)]="searchTerm" (keyup.enter)="getItem($event.target.value)">
+        <input matInput [(ngModel)]="searchTerm" (keyup.enter)="getItem($event.target.value)">
     </mat-form-field>
 </mat-card>

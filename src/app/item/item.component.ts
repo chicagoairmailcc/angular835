@@ -2,6 +2,7 @@ import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
+import { MessengerService } from '../messenger.service';
 
 @Component({
   selector: 'app-item',
@@ -18,7 +19,8 @@ export class ItemComponent implements OnInit, AfterContentChecked {
 
   constructor(
     private itemService: ItemService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private messengerService: MessengerService
   ) { }
 
   item: Item;
@@ -48,6 +50,7 @@ export class ItemComponent implements OnInit, AfterContentChecked {
     this.activatedRoute.url.subscribe(data => {
       console.log({ urlSegmentsFromItem: data });
       console.log({ itemActivatedRoute: this.activatedRoute });
+      this.messengerService.issueMessage('item-component-activated-route', data);
     });
   }
 
