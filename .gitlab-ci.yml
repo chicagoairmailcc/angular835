@@ -36,7 +36,7 @@ test:mypagesnatively:
   script:
     - pwd 
     - ls -a
-    - dnf update
+    - dnf update -yqq
     - dnf install chromium nodejs nodejs-yarn -yqq
     - which node
     - node --version
