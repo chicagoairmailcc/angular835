@@ -39,7 +39,6 @@ test:mypagesnatively:
     - dnf update -yqq
     - dnf install which chromium nodejs nodejs-yarn -yqq
     - which node
-    - which chromium
     - export CHROME_BIN=/usr/bin/chromium-browser
     - node --version
     - npm --version
