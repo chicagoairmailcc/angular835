@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { Quiz } from '../quiz';
+import { ActivatedRoute } from '@angular/router';
+import { MessengerService } from '../messenger.service';
 
 @Component({
   selector: 'app-quiz',
@@ -11,7 +13,11 @@ export class QuizComponent implements OnInit {
 
   quizzes: Quiz[];
 
-  constructor(private quizService: QuizService) { }
+  constructor(
+    private quizService: QuizService,
+    private activatedRoute: ActivatedRoute,
+    private messengerService: MessengerService
+    ) { }
 
   ngOnInit() {
     this.getQuiz();
@@ -26,6 +32,14 @@ export class QuizComponent implements OnInit {
         }
       }
     );
+  }
+
+  getCurrentUrl() {
+    this.activatedRoute.url.subscribe(data => {
+      console.log({ urlSegmentsFromItem: data });
+      console.log({ itemActivatedRoute: this.activatedRoute });
+      this.messengerService.issueMessage('quiz-component-activated-route', data);
+    });
   }
 
 }
