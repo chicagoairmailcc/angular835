@@ -20,6 +20,7 @@ export class QuizComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.getCurrentUrl();
     this.getQuiz();
   }
 
