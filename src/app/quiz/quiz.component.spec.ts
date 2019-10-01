@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuizComponent } from './quiz.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 describe('QuizComponent', () => {
   let component: QuizComponent;
@@ -11,7 +12,8 @@ describe('QuizComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ QuizComponent ],
       imports: [
-        HttpClientModule
+        HttpClientModule,
+        RouterModule.forRoot([]),
       ]
     })
     .compileComponents();
