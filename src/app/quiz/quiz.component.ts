@@ -36,8 +36,8 @@ export class QuizComponent implements OnInit {
 
   getCurrentUrl() {
     this.activatedRoute.url.subscribe(data => {
-      console.log({ urlSegmentsFromItem: data });
-      console.log({ itemActivatedRoute: this.activatedRoute });
+      console.log({ urlSegmentsFromQuiz: data });
+      console.log({ quizActivatedRoute: this.activatedRoute });
       this.messengerService.issueMessage('quiz-component-activated-route', data);
     });
   }
