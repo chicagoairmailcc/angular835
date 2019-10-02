@@ -22,7 +22,6 @@ export class SearchComponent implements OnInit, Communicable {
 
   ngOnInit() {
     this.messengerService.addObserver('item-component-activated-route', this);
-    this.messengerService.addObserver('quiz-component-activated-route', this);
     this.activatedRoute.paramMap.subscribe((data => {
       console.log({ searchComponentUrl: data });
       if (data.has('id')) {
